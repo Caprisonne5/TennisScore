@@ -1,15 +1,12 @@
 {
   "files": {
-    "main.css": "/TennisScore/static/css/main.1e65e1b0.css",
-    "main.js": "/TennisScore/static/js/main.a79ddc06.js",
-    "static/js/787.4eb2cfa2.chunk.js": "/TennisScore/static/js/787.4eb2cfa2.chunk.js",
-    "index.html": "/TennisScore/index.html",
-    "main.1e65e1b0.css.map": "/TennisScore/static/css/main.1e65e1b0.css.map",
-    "main.a79ddc06.js.map": "/TennisScore/static/js/main.a79ddc06.js.map",
-    "787.4eb2cfa2.chunk.js.map": "/TennisScore/static/js/787.4eb2cfa2.chunk.js.map"
+    "main.css": "/TennisScore/static/css/main.c0bdfbf5.css",
+    "main.js": "/TennisScore/static/js/main.d123cbcf.js",
+    "static/js/27.096237e1.chunk.js": "/TennisScore/static/js/27.096237e1.chunk.js",
+    "index.html": "/TennisScore/index.html"
   },
   "entrypoints": [
-    "static/css/main.1e65e1b0.css",
-    "static/js/main.a79ddc06.js"
+    "static/css/main.c0bdfbf5.css",
+    "static/js/main.d123cbcf.js"
   ]
 }
