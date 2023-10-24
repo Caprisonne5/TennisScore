@@ -22,9 +22,11 @@ const Home = () => {
 
     const [selectedPlayer1, setSelectedPlayer1] = useState("");
     const [selectedPlayer2, setSelectedPlayer2] = useState("");
+    const [playerData, setPlayerData] = useState(undefined);
 
     useEffect(  () => {
         getPlayers().then(data => {
+            setPlayerData(data.players);
             for(let i = 0; i < data.players.length; i++){
                 if (data.players[i].name === selectedPlayer1){
                     dispatch(addPlayer1ToState({player1: data.players[i]}));
@@ -51,10 +53,10 @@ const Home = () => {
             <CardTitle>Here Are Players</CardTitle>
             <Row>
                 <Col>
-                    <PlayerSelect onChange={onChangeP1} value={undefined}/>
+                    {!playerData ? ("Loading") : (<PlayerSelect playerData={playerData.map(y => (y.name))} onChange={onChangeP1} value={undefined}/>)}
                 </Col>
                 <Col>
-                    <PlayerSelect onChange={onChangeP2} value={undefined}/>
+                    {!playerData ? ("Loading") : (<PlayerSelect playerData={playerData.map(y => (y.name))} onChange={onChangeP2} value={undefined}/>)}
                 </Col>
             </Row>
             <Row>
