@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/TennisScore/static/css/main.c0bdfbf5.css",
-    "main.js": "/TennisScore/static/js/main.d123cbcf.js",
+    "main.js": "/TennisScore/static/js/main.3915cadf.js",
     "static/js/27.096237e1.chunk.js": "/TennisScore/static/js/27.096237e1.chunk.js",
     "index.html": "/TennisScore/index.html"
   },
   "entrypoints": [
     "static/css/main.c0bdfbf5.css",
-    "static/js/main.d123cbcf.js"
+    "static/js/main.3915cadf.js"
   ]
 }
