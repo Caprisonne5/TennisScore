@@ -7,13 +7,6 @@ import AddPlayer from "./pages/AddPlayer";
 
 function App() {
 
-    /*const [pathName, setPathName] = useState(null);
-    let location = useLocation();
-
-    useEffect(() => {
-        setPathName(location.pathname);
-    }, [location]);*/
-
 
     return (
     <Container>

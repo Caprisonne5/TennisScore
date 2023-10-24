@@ -40,4 +40,8 @@ class Player {
         this.strengths.volley = volley;
     }
 
+    getStrengths() {
+        return this.strengths;
+    }
+
 } export default Player;
