@@ -2,7 +2,7 @@ import {Card, Col, Label, Progress, Row, Spinner} from "reactstrap";
 
 const PlayerStrengths = ({Player})=> {
 
-    let strengths = Object.keys(Player.getStrengths());
+    let strengths = Object.keys(Player.strengths);
 
     return (
 
@@ -21,8 +21,8 @@ const PlayerStrengths = ({Player})=> {
                                 </Label>
                             </Col>
                             <Col xs={8}>
-                                <Progress style={{marginTop: 6}} id={strength.toString()} value={Player.getStrengths()[strength]}>
-                                    {Player.getStrengths()[strength]}
+                                <Progress style={{marginTop: 6}} id={strength.toString()} value={Player.strengths[strength]}>
+                                    {Player.strengths[strength]}
                                 </Progress>
                             </Col>
                         </Row>
