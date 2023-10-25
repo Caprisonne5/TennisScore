@@ -36,7 +36,7 @@ const Home = () => {
                 }
             }
         })
-    }, [selectedPlayer1, selectedPlayer2]);
+    }, [selectedPlayer1, selectedPlayer2, dispatch]);
 
     const onChangeP1  = (e) => {
         const selectedPlayer1 = e.target.value.toString();
