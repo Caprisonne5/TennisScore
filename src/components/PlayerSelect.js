@@ -2,7 +2,7 @@ import {Input, Spinner} from "reactstrap";
 import PlayerRepository from "../objects/PlayerRepository";
 import player from "../objects/Player";
 
-const PlayerSelect = ({onChange, value, playerData}) => {
+const PlayerSelect = ({onChange, value,defaultValue, playerData}) => {
 
         return(
 
@@ -14,7 +14,7 @@ const PlayerSelect = ({onChange, value, playerData}) => {
                     />
                 ) : (
                     <>
-                        <option value="" disabled>Select Player</option>
+                        <option value="" disabled selected={true}>Select Player</option>
                         {Array.from(playerData).map((value, index) => (
                             <option key={index} value={value}>
                                 {value}

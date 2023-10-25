@@ -53,10 +53,10 @@ const Home = () => {
             <CardTitle>Here Are Players</CardTitle>
             <Row>
                 <Col>
-                    {!playerData ? ("Loading") : (<PlayerSelect playerData={playerData.map(y => (y.name))} onChange={onChangeP1} value={undefined}/>)}
+                    {!playerData ? ("Loading") : (<PlayerSelect defaultValue={0} playerData={playerData.map(y => (y.name))} onChange={onChangeP1} value={undefined}/>)}
                 </Col>
                 <Col>
-                    {!playerData ? ("Loading") : (<PlayerSelect playerData={playerData.map(y => (y.name))} onChange={onChangeP2} value={undefined}/>)}
+                    {!playerData ? ("Loading") : (<PlayerSelect defaultValue={1} playerData={playerData.map(y => (y.name))} onChange={onChangeP2} value={undefined}/>)}
                 </Col>
             </Row>
             <Row>
