@@ -13,9 +13,6 @@ let Players = [];
 Players.push("Nicolas");
 Players.push("Mateo");
 
-
-
-
 const Home = () => {
 
     const dispatch = useDispatch();
@@ -23,21 +20,34 @@ const Home = () => {
     const [selectedPlayer1, setSelectedPlayer1] = useState("");
     const [selectedPlayer2, setSelectedPlayer2] = useState("");
     const [playerData, setPlayerData] = useState(undefined);
+    const [filterDataP1, setFilterDataP1] = useState(undefined);
+    const [filterDataP2, setFilterDataP2] = useState(undefined);
 
     useEffect(  () => {
         getPlayers().then(data => {
             setPlayerData(data.players);
+            setFilterDataP1(data.players);
+            setFilterDataP2(data.players);
             for(let i = 0; i < data.players.length; i++){
                 if (data.players[i].name === selectedPlayer1){
                     dispatch(addPlayer1ToState({player1: data.players[i]}));
+                    setFilterDataP1(filterData(selectedPlayer1));
                 }
                 if (data.players[i].name === selectedPlayer2){
                     dispatch(addPlayer2ToState({player2: data.players[i]}));
+                    setFilterDataP2(filterData(selectedPlayer2));
                 }
             }
         })
     }, [selectedPlayer1, selectedPlayer2, dispatch]);
 
+    useEffect(() => {
+        console.log(filterDataP1);
+        console.log(filterDataP2);
+    }, [filterDataP1, filterDataP2]);
+    function filterData (players){
+        return playerData.filter(player => player.name !== players);
+    }
     const onChangeP1  = (e) => {
         const selectedPlayer1 = e.target.value.toString();
         setSelectedPlayer1(selectedPlayer1);
@@ -53,10 +63,20 @@ const Home = () => {
             <CardTitle>Here Are Players</CardTitle>
             <Row>
                 <Col>
-                    {!playerData ? ("Loading") : (<PlayerSelect defaultValue={0} playerData={playerData.map(y => (y.name))} onChange={onChangeP1} value={undefined}/>)}
+                    {!filterDataP2 ? ("Loading") :
+                        (<PlayerSelect
+                                       playerData={filterDataP2.map(y => y.name)}
+                                       onChange={onChangeP1}
+                                       value={selectedPlayer1}/>)
+                    }
                 </Col>
                 <Col>
-                    {!playerData ? ("Loading") : (<PlayerSelect defaultValue={1} playerData={playerData.map(y => (y.name))} onChange={onChangeP2} value={undefined}/>)}
+                    {!filterDataP1 ? ("Loading") :
+                        (<PlayerSelect
+                                       playerData={filterDataP1.map(y => y.name)}
+                                       onChange={onChangeP2}
+                                       value={selectedPlayer2}/>)
+                    }
                 </Col>
             </Row>
             <Row>
