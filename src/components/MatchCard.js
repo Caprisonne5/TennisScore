@@ -16,8 +16,8 @@ import "../styles/MatchCard.css"
 import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getMatches} from "../api";
-import tennisCourt from "../imgs/tennis-court-155517_1920.png"
 import Button from "react-bootstrap/Button";
+import tenniscourt from "../imgs/pngegg.png"
 
 const MatchCard = ({Players}) => {
     const Player1 = useSelector(state => state.player.player1);
@@ -65,13 +65,18 @@ const MatchCard = ({Players}) => {
 
     return(
         <Card className={"containerMatch"}>
-            <CardImg className={"courtImg"} src={tennisCourt}/>
-                <CardImgOverlay>
+            <div className={"containerMatch"}>
+            <CardImg src={tenniscourt} alt={"Tennis Court"} className={"courtImg"}/>
+            </div>
+            <CardImgOverlay>
                     {!Player1 || !Player2 ?
-                        (<Spinner
+                        (<div className={"containerMatch"}>
+                            <Spinner
                             style={{margin: "auto", width: "0.7rem", height: "0.7rem"}}
                             type="grow"
-                        />) :
+                        />
+                            </div>
+                        ) :
                         (
                         <Row className={"Row"}>
                             <Col xs={5} className={"PlayerCardsCol"}>
@@ -89,12 +94,11 @@ const MatchCard = ({Players}) => {
                                     <PlayerStrengths Player={Player2}/>
                                 </Card>
                             </Col>
-                            <Button variant="primary" className={"AddMatchButton"}>Add Match</Button>
+                            <Button style={{background: "#95b67f", borderColor: "#526843"}} className={"AddMatchButton"}>Add Match 🎾</Button>
                         </Row>
                         )
                     }
-
-                </CardImgOverlay>
+            </CardImgOverlay>
         </Card>
     );
 };
