@@ -1,12 +1,12 @@
-import {Card, CardTitle, Col, Container, Input, Row} from "reactstrap";
-import {Button} from "bootstrap/js/index.esm";
-import PlayerRepository from "../objects/PlayerRepository";
+import {Card, CardTitle, Col, Container,Row} from "reactstrap";
+import Button from 'react-bootstrap/Button';
 import PlayerSelect from "../components/PlayerSelect";
 import MatchCard from "../components/MatchCard";
-import {getMatches, getPlayers, test, testPost, testPutMatches} from "../api";
+import {getPlayers} from "../api";
 import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {addPlayer2ToState, addPlayer1ToState} from "../redux/playerSlice";
+import "../styles/Home.css"
 
 let Players = [];
 
@@ -42,8 +42,6 @@ const Home = () => {
     }, [selectedPlayer1, selectedPlayer2, dispatch]);
 
     useEffect(() => {
-        console.log(filterDataP1);
-        console.log(filterDataP2);
     }, [filterDataP1, filterDataP2]);
     function filterData (players){
         return playerData.filter(player => player.name !== players);
@@ -59,7 +57,7 @@ const Home = () => {
     }
 
     return <Container>
-        <Card>
+        <Card className={"container"}>
             <CardTitle>Here Are Players</CardTitle>
             <Row>
                 <Col>
@@ -79,10 +77,9 @@ const Home = () => {
                     }
                 </Col>
             </Row>
-            <Row>
-                <MatchCard Players={Players}/>
+            <Row className={"matchCard"}>
+                <MatchCard Players={Players} />
             </Row>
-
         </Card>
     </Container>
 };

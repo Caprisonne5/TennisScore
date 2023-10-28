@@ -1,11 +1,23 @@
-import {Card, CardText, CardTitle, Col, Input, Label, Progress, Row, Spinner} from "reactstrap";
-import PlayerRepository from "../objects/PlayerRepository";
+import {
+    Card,
+    CardImg,
+    CardImgOverlay,
+    CardText,
+    CardTitle,
+    Col,
+    Input,
+    Label,
+    Progress,
+    Row,
+    Spinner
+} from "reactstrap";
 import PlayerStrengths from "./PlayerStrengths";
 import "../styles/MatchCard.css"
 import {useSelector} from "react-redux";
 import {useEffect, useState} from "react";
 import {getMatches} from "../api";
-
+import tennisCourt from "../imgs/tennis-court-155517_1920.png"
+import Button from "react-bootstrap/Button";
 
 const MatchCard = ({Players}) => {
     const Player1 = useSelector(state => state.player.player1);
@@ -30,7 +42,6 @@ const MatchCard = ({Players}) => {
         setWinsPlayer2(0);
         if (Player1 && Player2) {
             getMatches().then(data => {
-                console.log(data.matches.length);
                 let winsP1 = 0;
                 let winsP2 = 0;
                 for (let i = 0; i < data.matches.length; i++) {
@@ -53,34 +64,37 @@ const MatchCard = ({Players}) => {
 
 
     return(
-        <Card>
-            {!Player1 || !Player2 ?
-                (<Spinner
-                    style={{margin: "auto", width: "0.7rem", height: "0.7rem"}}
-                    type="grow"
-                />) :
-                (
-                <Row>
-                    <Col xs={5}>
-                        <Card className={"PlayerCards"}>
-                            <CardTitle><h1>{Player1.name}</h1></CardTitle>
-                            <PlayerStrengths Player={Player1}/>
-                        </Card>
-                    </Col>
-                    <Col xs={2} className={"ScoreCard"}>
-                        <Card>
-                            {WinsPlayer1} {WinsPlayer2}
-                        </Card>
-                    </Col>
-                    <Col xs={5}>
-                        <Card className={"PlayerCards"}>
-                            <CardTitle><h1>{Player2.name}</h1></CardTitle>
-                            <PlayerStrengths Player={Player2}/>
-                        </Card>
-                    </Col>
-                </Row>
-                )
-            }
+        <Card className={"containerMatch"}>
+            <CardImg className={"courtImg"} src={tennisCourt}/>
+                <CardImgOverlay>
+                    {!Player1 || !Player2 ?
+                        (<Spinner
+                            style={{margin: "auto", width: "0.7rem", height: "0.7rem"}}
+                            type="grow"
+                        />) :
+                        (
+                        <Row className={"Row"}>
+                            <Col xs={5} className={"PlayerCardsCol"}>
+                                <Card className={"PlayerCards"}>
+                                    <CardTitle><h1>{Player1.name}</h1></CardTitle>
+                                    <PlayerStrengths Player={Player1}/>
+                                </Card>
+                            </Col>
+                            <Col className={"ScoreCard"}>
+                                    {WinsPlayer1} : {WinsPlayer2}
+                            </Col>
+                            <Col xs={5} className={"PlayerCardsCol"}>
+                                <Card className={"PlayerCards"}>
+                                    <CardTitle><h1>{Player2.name}</h1></CardTitle>
+                                    <PlayerStrengths Player={Player2}/>
+                                </Card>
+                            </Col>
+                            <Button variant="primary" className={"AddMatchButton"}>Add Match</Button>
+                        </Row>
+                        )
+                    }
+
+                </CardImgOverlay>
         </Card>
     );
 };

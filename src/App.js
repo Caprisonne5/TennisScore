@@ -1,8 +1,7 @@
 import './styles/App.css';
-import {Button, Card, Container, Nav, Navbar, NavbarBrand, NavItem, NavLink} from "reactstrap";
+import {Card, Container, Nav, Navbar, NavbarBrand, NavItem, NavLink} from "reactstrap";
 import Home from "./pages/Home";
-import {BrowserRouter, Link, Route, Routes, useLocation} from "react-router-dom";
-import {useEffect, useState} from "react";
+import {Link, Route, Routes} from "react-router-dom";
 import AddPlayer from "./pages/AddPlayer";
 
 function App() {

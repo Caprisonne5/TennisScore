@@ -1,6 +1,4 @@
 import {Input, Spinner} from "reactstrap";
-import PlayerRepository from "../objects/PlayerRepository";
-import player from "../objects/Player";
 
 const PlayerSelect = ({onChange, value, playerData, filterOut}) => {
         return(

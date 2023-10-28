@@ -42,7 +42,6 @@ export async function putNewMatch(player1ID, player2ID, winnerID) {
     }else {
         console.log("Fehler beim Senden der Daten:", response.status, response.statusText);
     }
-    return;
 }
 
 

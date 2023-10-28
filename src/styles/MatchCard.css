@@ -1,11 +1,48 @@
-.PlayerCards{
+.containerMatch{
     border: none;
-}
-
-.ScoreCard{
     display: flex;
-    align-items: center;
     justify-content: center;
+    margin-top: 1rem;
 }
 
+.PlayerCards{
+    text-align: center;
+    box-shadow: 5px 5px 5px grey;
+}
 
+.AddMatchButton{
+    margin-top: 1rem;
+}
+
+.ScoreCard {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    font-family: "Impact", sans-serif;
+    font-size: 3rem;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
+.courtImg {
+    width: auto;
+    height: 550px;
+    margin: 5rem auto 2rem auto;
+    position: relative;
+    right: 32.4%;
+}
+
+.PlayerCardsCol {
+    width: 70%;
+    opacity: 0.9;
+}
+
+.Row{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+
+}
