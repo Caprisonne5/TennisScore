@@ -19,9 +19,9 @@
 }
 
 .courtImg {
-    width: 700px;
+    width: 100%;
     height: auto;
-    margin-top: 10rem;
+    margin-top: 12rem;
 }
 
 .ScoreCard {
@@ -35,8 +35,8 @@
 
 
 .PlayerCardsCol {
-    width: 70%;
-    opacity: 0.9;
+    width: 100%;
+    opacity: 0.8;
 }
 
 .Row{
