@@ -18,12 +18,14 @@ import {useEffect, useState} from "react";
 import {getMatches} from "../api";
 import Button from "react-bootstrap/Button";
 import tenniscourt from "../imgs/pngegg.png"
+import AddMatch from "./AddMatch";
 
-const MatchCard = ({Players}) => {
+const MatchCard = () => {
     const Player1 = useSelector(state => state.player.player1);
     const Player2 = useSelector(state => state.player.player2);
     const [WinsPlayer1, setWinsPlayer1] = useState(0);
     const [WinsPlayer2, setWinsPlayer2] = useState(0);
+    const [addMatch, setAddMatch] = useState(false);
 
     function relevantGame (match) {
         let relevant = false;
@@ -61,6 +63,10 @@ const MatchCard = ({Players}) => {
         }
     }, [Player1, Player2]);
 
+    function cancelAddMatch () {
+        setAddMatch(false);
+    }
+
 
 
     return(
@@ -74,29 +80,29 @@ const MatchCard = ({Players}) => {
                             <Spinner
                             style={{margin: "auto", width: "0.7rem", height: "0.7rem"}}
                             type="grow"
-                        />
-                            </div>
-                        ) :
-                        (
-                        <Row className={"Row"}>
-                            <Col xs={5} className={"PlayerCardsCol"}>
-                                <Card className={"PlayerCards"}>
-                                    <CardTitle><h1>{Player1.name}</h1></CardTitle>
-                                    <PlayerStrengths Player={Player1}/>
-                                </Card>
-                            </Col>
-                            <Col className={"ScoreCard"}>
-                                    {WinsPlayer1} : {WinsPlayer2}
-                            </Col>
-                            <Col xs={5} className={"PlayerCardsCol"}>
-                                <Card className={"PlayerCards"}>
-                                    <CardTitle><h1>{Player2.name}</h1></CardTitle>
-                                    <PlayerStrengths Player={Player2}/>
-                                </Card>
-                            </Col>
-                            <Button style={{background: "#95b67f", borderColor: "#526843"}} className={"AddMatchButton"}>Add Match 🎾</Button>
-                        </Row>
-                        )
+                        /></div>
+                        ) : addMatch ?
+                            (<AddMatch cancelAddMatch={cancelAddMatch}/>)
+                            : (
+                                <Row className={"Row"}>
+                                    <Col xs={5} className={"PlayerCardsCol"}>
+                                        <Card className={"PlayerCards"}>
+                                            <CardTitle><h1>{Player1.name}</h1></CardTitle>
+                                            <PlayerStrengths Player={Player1}/>
+                                        </Card>
+                                    </Col>
+                                    <Col className={"ScoreCard"}>
+                                            {WinsPlayer1} : {WinsPlayer2}
+                                    </Col>
+                                    <Col xs={5} className={"PlayerCardsCol"}>
+                                        <Card className={"PlayerCards"}>
+                                            <CardTitle><h1>{Player2.name}</h1></CardTitle>
+                                            <PlayerStrengths Player={Player2}/>
+                                        </Card>
+                                    </Col>
+                                    <Button style={{background: "#95b67f", borderColor: "#526843"}} className={"AddMatchButton"} onClick={() => setAddMatch(true)}>Add Match 🎾</Button>
+                                </Row>
+                            )
                     }
             </CardImgOverlay>
         </Card>

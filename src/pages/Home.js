@@ -58,8 +58,7 @@ const Home = () => {
 
     return <Container>
         <Card className={"container"}>
-            <CardTitle>Here Are Players</CardTitle>
-            <Row>
+            <Row className={"playerselectionRow"}>
                 <Col>
                     {!filterDataP2 ? ("Loading") :
                         (<PlayerSelect

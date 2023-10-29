@@ -1,0 +1,44 @@
+
+.addMatchContainer{
+    display: grid;
+    position: relative;
+    grid-template-columns: 70%;
+    grid-template-rows: 10% 35% 35% 20%;
+    row-gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.playerBtn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-family: "Impact", sans-serif;
+    font-size: 1.5rem;
+    border-width: thick;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.winnerTitle{
+    grid-row: 1 / 2;
+    font-family: "Impact", sans-serif;
+    font-size: 3rem;
+}
+
+.player1Btn{
+    grid-row: 2 / 3;
+}
+.player2Btn{
+    grid-row: 3 / 4;
+}
+
+.cancelBtn{
+    grid-row: 4 / 5;
+    font-family: "Impact", sans-serif;
+    font-size: 1.5rem;
+    border-width: thick;
+    box-shadow: 5px 5px 5px grey;
+}
+
+

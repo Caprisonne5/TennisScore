@@ -1,3 +1,7 @@
 .container{
     border: none;
 }
+
+.playerselectionRow {
+    margin-top: 1rem;
+}
