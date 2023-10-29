@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/TennisScore/static/css/main.201064d8.css",
+    "main.css": "/TennisScore/static/css/main.44e7bc39.css",
     "main.js": "/TennisScore/static/js/main.4f69bdb3.js",
     "static/js/27.096237e1.chunk.js": "/TennisScore/static/js/27.096237e1.chunk.js",
     "static/media/pngegg.png": "/TennisScore/static/media/pngegg.fc2e24294b4d6bfe96fb.png",
     "index.html": "/TennisScore/index.html"
   },
   "entrypoints": [
-    "static/css/main.201064d8.css",
+    "static/css/main.44e7bc39.css",
     "static/js/main.4f69bdb3.js"
   ]
 }
