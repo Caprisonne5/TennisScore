@@ -100,7 +100,7 @@ const MatchCard = () => {
                                             <PlayerStrengths Player={Player2}/>
                                         </Card>
                                     </Col>
-                                    <Button style={{background: "#95b67f", borderColor: "#526843"}} className={"AddMatchButton"} onClick={() => setAddMatch(true)}>Add Match 🎾</Button>
+                                    <Button style={{background: "#95b67f", borderColor: "#59833d"}} className={"AddMatchButton"} onClick={() => setAddMatch(true)}>Add Match 🎾</Button>
                                 </Row>
                             )
                     }

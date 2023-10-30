@@ -1,5 +1,5 @@
 import {Card, Col, Label, Progress, Row, Spinner} from "reactstrap";
-
+import "../styles/MatchCard.css"
 const PlayerStrengths = ({Player})=> {
 
     let strengths = Object.keys(Player.strengths);
@@ -21,7 +21,7 @@ const PlayerStrengths = ({Player})=> {
                                 </Label>
                             </Col>
                             <Col xs={8}>
-                                <Progress style={{marginTop: 6}} id={strength.toString()} value={Player.strengths[strength]}>
+                                <Progress style={{marginTop: 6}} barClassName={"strengthProgress"} color={"green"} id={strength.toString()} value={Player.strengths[strength]}>
                                     {Player.strengths[strength]}
                                 </Progress>
                             </Col>

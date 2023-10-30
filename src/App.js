@@ -15,8 +15,8 @@ function App() {
                     Something Cool
                 </NavbarBrand>
                 <Nav className="mr-auto" pills>
-                    <NavItem>
-                        <NavLink tag={Link} to={"/addPlayer"} active>
+                    <NavItem >
+                        <NavLink style={{background:"#95b67f"}} tag={Link} to={"/addPlayer"} active>
                             Add Player
                         </NavLink>
                     </NavItem>

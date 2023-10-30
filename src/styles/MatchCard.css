@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    background-color: #282c34;
 }
 
 .PlayerCards{
@@ -45,6 +46,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+.strengthProgress {
+    background-color: #92b37c;
 }
 
 @media only screen and (min-width: 768px) {
